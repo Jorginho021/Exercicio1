@@ -145,23 +145,24 @@ public class Exercicios {
 Crie uma classe ContaBancaria com os atributos titular (público) e saldo (privado). Implemente métodos para depositar e sacar, garantindo que um saque não ocorra se o saldo for insuficiente. O método getSaldo() deve permitir acessar o saldo.
 package exercicios;
 
-public class Exercicio3 {
+public class ContaBancaria {
 
     public static void main(String[] args) {
+    }
 
-    // Public attribute for the account holder
+    // Atributo público para o titular da conta
     public String titular;
 
-    // Private attribute for account balance
+    // Atributo privado para o saldo da conta
     private double saldo;
 
-    // Constructor to initialize the account holder and balance
-    public Exercicios(String titular, double saldoInicial) {
+    // Construtor para inicializar o titular e o saldo inicial
+    public ContaBancaria(String titular, double saldoInicial) {
         this.titular = titular;
         this.saldo = saldoInicial;
     }
 
-    // Method to deposit money into the account
+    // Método para depositar dinheiro na conta
     public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
@@ -171,7 +172,7 @@ public class Exercicio3 {
         }
     }
 
-    // Method to withdraw money from the account, ensuring sufficient balance
+    // Método para sacar dinheiro da conta, garantindo saldo suficiente
     public void sacar(double valor) {
         if (valor <= saldo) {
             saldo -= valor;
@@ -181,7 +182,7 @@ public class Exercicio3 {
         }
     }
 
-    // Method to get the current balance
+    // Método para obter o saldo atual
     public double getSaldo() {
         return saldo;
     }
@@ -191,54 +192,55 @@ package exercicios;
 
 public class Produto {
 
-    private String Nome;
-    private double Preco;
+    private String nome;
+    private double preco;
 
-    // Default constructor
+    // Construtor padrão
     public Produto() {
     }
 
-    // Constructor with name only
-    public Produto(String Nome) {
-        this.Nome = Nome;
+    // Construtor com nome apenas
+    public Produto(String nome) {
+        this.nome = nome;
     }
 
-    // Constructor with name and price
-    public Produto(String Nome, double preco) {
-        this.Nome = Nome;
-        this.Preco = preco;
+    // Construtor com nome e preço
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
     }
 
-    // Method to display product details
-    public void Exibir() {
-        System.out.println("Nome: " + Nome);
-        System.out.println("Preço: " + Preco);
+    // Método para exibir detalhes do produto
+    public void exibir() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Preço: " + preco);
     }
 
-    // Getters and Setters
+    // Getters e Setters
     public String getNome() {
-        return this.Nome;
+        return this.nome;
     }
 
-    public void setNome(String Nome) {  // Fixed: added parameter to set Nome
-        this.Nome = Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public double getPreco() {
-        return this.Preco;
+        return this.preco;
     }
 
-    public void setPreco(double Preco) {
-        if (Preco < 0) {
+    public void setPreco(double preco) {
+        if (preco < 0) {
             System.out.println("Erro! O valor é menor do que o permitido.");
         } else {
-            this.Preco = Preco;  // Set price if valid
+            this.preco = preco;
         }
     }
 }
 
 4 Uso de protected em uma hierarquia de classes
 Crie uma classe Veiculo com um atributo protected chamado velocidadeMaxima. Depois, crie uma classe Carro que herde de Veiculo e adicione um método para exibir a velocidade máxima.
+   
        // Construtor que chama o construtor da classe pai (Veiculo)
     public Carro(int velocidadeMaxima) {
         super(velocidadeMaxima); // Inicializa o atributo velocidadeMaxima da classe Veiculo
@@ -442,6 +444,8 @@ public class Atividedes7 {
 
 8 Criando um sistema de controle de acesso
 Crie uma classe Porta com um atributo private boolean aberta. Adicione métodos public abrir() e fechar() para modificar o estado da porta, garantindo que nenhum código externo possa alterar diretamente esse estado.
+8 Criando um sistema de controle de acesso
+Crie uma classe Porta com um atributo private boolean aberta. Adicione métodos public abrir() e fechar() para modificar o estado da porta, garantindo que nenhum código externo possa alterar diretamente esse estado.
 package exercicios;
 public class Exercicio1 {
    public static void main(String[] args) { // Adicionado '{' na assinatura do main
@@ -516,6 +520,7 @@ public class Porta {
        return aberta;
    }
 }
+
 
 9 Implementando um protected método em uma classe base
 Crie uma classe Animal com um método protected chamado fazerSom(). Depois, crie duas classes Cachorro e Gato que herdam de Animal e sobrescrevem esse método com sons diferentes. No programa principal, teste essas classes.
